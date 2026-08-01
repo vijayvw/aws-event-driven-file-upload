@@ -1,0 +1,18 @@
+# Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+
+# Generated artifacts
+terraform/lambda.zip
+terraform/build/
+
+# Sensitive variables
+terraform/terraform.tfvars
+
+# PHP dependencies
+website/vendor/
+
+# macOS
+.DS_Store

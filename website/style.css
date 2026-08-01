@@ -1,0 +1,1901 @@
+/* ==========================================================
+   UploadFlow Premium UI
+   Part 1 - Design System & Hero
+   ========================================================== */
+
+/* ---------- Google Font ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+
+.particles{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:-5;
+
+}
+
+.particles span{
+
+    position:absolute;
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.35);
+
+    animation:floatParticle 18s linear infinite;
+
+}
+
+.particles span:nth-child(1){left:10%;top:90%;}
+.particles span:nth-child(2){left:30%;top:100%;}
+.particles span:nth-child(3){left:50%;top:95%;}
+.particles span:nth-child(4){left:70%;top:105%;}
+.particles span:nth-child(5){left:85%;top:92%;}
+.particles span:nth-child(6){left:95%;top:100%;}
+
+@keyframes floatParticle{
+
+    from{
+
+        transform:translateY(0);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:translateY(-120vh);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* ---------- Root Variables ---------- */
+:root{
+
+    --bg:#050816;
+    --bg2:#0b1225;
+
+    --glass:rgba(255,255,255,.08);
+    --glass-border:rgba(255,255,255,.12);
+
+    --primary:#4F8CFF;
+    --secondary:#7C5CFF;
+    --cyan:#00E0FF;
+    --success:#2BE675;
+
+    --text:#ffffff;
+    --text2:#b9c5da;
+
+    --shadow:0 20px 60px rgba(0,0,0,.35);
+
+    --radius:28px;
+
+}
+
+/* ---------- Reset ---------- */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:var(--bg);
+
+    color:white;
+
+    overflow-x:hidden;
+
+    min-height:100vh;
+
+}
+
+/* ---------- Selection ---------- */
+
+::selection{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+/* ---------- Scrollbar ---------- */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(
+        var(--primary),
+        var(--secondary)
+    );
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#09111f;
+
+}
+
+/* ==========================================================
+   Animated Grid
+   ========================================================== */
+
+.bg-grid{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-10;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255,255,255,.03) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.03) 1px,
+            transparent 1px
+        );
+
+    background-size:45px 45px;
+
+}
+
+/* ==========================================================
+   Aurora
+   ========================================================== */
+
+.blob{
+
+    position:fixed;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    opacity:.55;
+
+    z-index:-8;
+
+    animation:blobFloat 15s ease-in-out infinite;
+
+}
+
+.blob1{
+
+    width:420px;
+
+    height:420px;
+
+    background:#4F8CFF;
+
+    top:-150px;
+
+    left:-120px;
+
+}
+
+.blob2{
+
+    width:450px;
+
+    height:450px;
+
+    background:#7C5CFF;
+
+    bottom:-180px;
+
+    right:-120px;
+
+    animation-delay:4s;
+
+}
+
+.blob3{
+
+    width:300px;
+
+    height:300px;
+
+    background:#00E0FF;
+
+    left:55%;
+
+    top:30%;
+
+    animation-delay:8s;
+
+}
+
+@keyframes blobFloat{
+
+    0%{
+
+        transform:translate(0,0);
+
+    }
+
+    50%{
+
+        transform:
+        translate(40px,-60px)
+        scale(1.08);
+
+    }
+
+    100%{
+
+        transform:translate(0,0);
+
+    }
+
+}
+
+/* ==========================================================
+   Navbar
+   ========================================================== */
+
+.nav{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    right:0;
+
+    height:85px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 8%;
+
+    backdrop-filter:blur(18px);
+
+    background:rgba(5,8,22,.45);
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+
+    z-index:1000;
+
+}
+
+.logo{
+
+    font-size:30px;
+
+    font-weight:800;
+
+    background:linear-gradient(
+        90deg,
+        white,
+        #8fb6ff,
+        #00E0FF
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+.upload-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.nav nav{
+
+    display:flex;
+
+    gap:35px;
+
+}
+
+.nav nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.nav nav a:hover{
+
+    color:var(--cyan);
+
+}
+
+/* ==========================================================
+   Hero
+   ========================================================== */
+
+.hero{
+
+    min-height:100vh;
+
+    display:grid;
+
+    grid-template-columns:1.1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+
+    padding:120px 8%;
+
+}
+
+.hero-text h1{
+
+    font-size:68px;
+
+    line-height:1.05;
+
+    margin:25px 0;
+
+    font-weight:800;
+
+}
+
+.hero-text p{
+
+    color:var(--text2);
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    max-width:620px;
+
+}
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:10px 20px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    font-size:14px;
+
+}
+
+.hero-buttons{
+
+    margin-top:40px;
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+.hero-stats{
+
+    display:flex;
+
+    gap:30px;
+
+    margin-top:55px;
+
+    flex-wrap:wrap;
+
+}
+
+.stat{
+
+    min-width:130px;
+
+}
+
+.stat h2{
+
+    font-size:42px;
+
+    font-weight:800;
+
+    color:var(--cyan);
+
+}
+
+
+.stat span{
+
+    color:var(--text2);
+
+    font-size:15px;
+
+}
+
+/* Buttons */
+
+.primary-btn,
+.secondary-btn{
+
+    padding:16px 34px;
+
+    border-radius:16px;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    transition:.35s;
+
+}
+
+.primary-btn{
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:white;
+
+    box-shadow:0 15px 40px rgba(79,140,255,.35);
+
+}
+
+.secondary-btn{
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.12);
+
+}
+
+.primary-btn:hover,
+.secondary-btn:hover{
+
+    transform:translateY(-6px);
+
+}
+/* ==========================================================
+   PART 2
+   Upload Card + Cloud + Pipeline + Features
+   ========================================================== */
+
+
+/* ==========================================================
+   Animated Cloud Card
+   ========================================================== */
+
+.cloud-card{
+
+    position:relative;
+
+    width:100%;
+
+    height:520px;
+
+    border-radius:32px;
+
+    overflow:hidden;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(24px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:var(--shadow);
+
+}
+
+.cloud-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+
+    height:500px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            rgba(79,140,255,.18),
+            transparent 70%
+        );
+
+    animation:rotateGlow 12s linear infinite;
+
+}
+
+@keyframes rotateGlow{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+.cloud{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:5;
+}
+
+.cloud img{
+    width:180px;
+    height:180px;
+    object-fit:contain;
+
+    animation:cloudFloat 5s ease-in-out infinite;
+
+    filter:
+        drop-shadow(0 0 30px rgba(79,140,255,.4))
+        drop-shadow(0 0 70px rgba(124,92,255,.3));
+}
+
+.rings{
+
+    position:absolute;
+
+    width:220px;
+
+    height:220px;
+
+    border-radius:50%;
+
+    border:2px solid rgba(79,140,255,.25);
+
+    animation:ring 3s linear infinite;
+
+}
+
+@keyframes cloudFloat{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-18px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes ring{
+
+    from{
+
+        transform:scale(.8);
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:scale(2.3);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* ==========================================================
+   Upload Section
+   ========================================================== */
+
+.upload-section{
+
+    padding:120px 8%;
+
+}
+
+.upload-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    max-width:850px;
+
+    margin:auto;
+
+    padding:55px;
+
+    border-radius:32px;
+
+    backdrop-filter:blur(25px);
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:var(--shadow);
+
+}
+
+.upload-card h2{
+
+    text-align:center;
+
+    font-size:40px;
+
+    margin-bottom:15px;
+
+    background:linear-gradient(
+        90deg,
+        white,
+        #89b4ff,
+        #00E0FF
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+.upload-card p{
+
+    text-align:center;
+
+    color:var(--text2);
+
+}
+
+.progress-container{
+
+    margin-top:30px;
+
+}
+
+.progress-bar{
+
+    width:100%;
+
+    height:10px;
+
+    background:rgba(255,255,255,.08);
+
+    border-radius:100px;
+
+    overflow:hidden;
+
+}
+
+.progress-fill{
+
+    width:0%;
+
+    height:100%;
+
+    border-radius:100px;
+
+    background:linear-gradient(
+        90deg,
+        var(--primary),
+        var(--cyan)
+    );
+
+    transition:width .4s ease;
+
+}
+
+.progress-text{
+
+    display:block;
+
+    margin-top:12px;
+
+    color:var(--text2);
+
+    font-size:14px;
+
+}
+
+
+/* ==========================================================
+   Drop Area
+   ========================================================== */
+
+.drop-area{
+
+    margin-top:40px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:320px;
+
+    border:2px dashed rgba(255,255,255,.18);
+
+    border-radius:26px;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+    background:rgba(255,255,255,.03);
+
+}
+
+.drop-area:hover{
+
+    transform:translateY(-8px);
+
+    border-color:var(--cyan);
+
+    background:rgba(255,255,255,.06);
+
+}
+
+.drop-area input{
+
+    display:none;
+
+}
+
+.upload-icon{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.upload-icon img{
+    width:100px;
+    height:100px;
+    animation:cloudFloat 4s ease-in-out infinite;
+    filter:drop-shadow(0 0 20px rgba(79,140,255,.4));
+}
+
+.drop-area h3{
+
+    font-size:34px;
+
+    margin-bottom:12px;
+
+}
+
+.drop-area p{
+
+    color:var(--text2);
+
+}
+
+.browse{
+
+    margin-top:28px;
+
+    padding:15px 30px;
+
+    border-radius:14px;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:white;
+
+    font-weight:700;
+
+    transition:.35s;
+
+}
+
+.browse:hover{
+
+    transform:scale(1.05);
+
+}
+
+
+/* ==========================================================
+   Upload Button
+   ========================================================== */
+
+.upload-btn{
+
+    width:100%;
+
+    margin-top:35px;
+
+    padding:18px;
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    border-radius:18px;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    color:white;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    transition:.35s;
+
+    box-shadow:0 15px 35px rgba(79,140,255,.30);
+
+}
+
+.upload-btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 25px 60px rgba(79,140,255,.45);
+
+}
+
+
+/* ==========================================================
+   AWS Pipeline
+   ========================================================== */
+
+.pipeline{
+
+    padding:130px 8%;
+
+}
+
+.pipeline h2{
+
+    text-align:center;
+
+    font-size:48px;
+
+    margin-bottom:80px;
+
+    background:linear-gradient(
+        90deg,
+        #ffffff,
+        #8fb6ff,
+        #00E0FF
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+.flow{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+
+}
+
+.node{
+
+    width:220px;
+
+    padding:40px;
+
+    border-radius:30px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    transition:.4s;
+
+    box-shadow:var(--shadow);
+
+    cursor:pointer;
+
+}
+
+.node:hover{
+
+    transform:translateY(-12px) scale(1.04);
+
+    border-color:rgba(79,140,255,.35);
+
+    box-shadow:
+        0 20px 50px rgba(79,140,255,.25);
+
+}
+
+.node .icon{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+.node .icon img{
+
+    width:80px;
+
+    height:80px;
+
+    transition:.35s;
+
+}
+
+.node:hover .icon img{
+
+    transform:scale(1.1) rotate(-5deg);
+
+}
+
+.node h3{
+
+    font-size:28px;
+
+    margin-bottom:12px;
+
+}
+
+.node p{
+
+    color:var(--text2);
+
+}
+
+.arrow{
+
+    font-size:42px;
+
+    color:var(--cyan);
+
+    animation:arrowMove 1.5s infinite;
+
+}
+
+@keyframes arrowMove{
+
+    0%,100%{
+
+        transform:translateX(0);
+
+    }
+
+    50%{
+
+        transform:translateX(8px);
+
+    }
+
+}
+
+
+/* ==========================================================
+   Feature Cards
+   ========================================================== */
+
+.features{
+
+    padding:120px 8%;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+}
+
+.feature{
+
+    padding:35px;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.4s;
+
+}
+
+.feature:hover{
+
+    transform:
+        translateY(-12px)
+        scale(1.03);
+
+    border-color:rgba(79,140,255,.35);
+
+    box-shadow:
+        0 25px 60px rgba(79,140,255,.18);
+
+}
+
+.feature h3{
+
+    font-size:28px;
+
+    margin-bottom:15px;
+
+}
+
+.feature p{
+
+    color:var(--text2);
+
+    line-height:1.8;
+
+}
+
+/* ==========================================================
+   Built With
+   ========================================================== */
+
+.tech-stack{
+
+    padding:120px 8%;
+
+    text-align:center;
+
+}
+
+.tech-stack h2{
+
+    font-size:46px;
+
+    margin-bottom:50px;
+
+    background:linear-gradient(
+        90deg,
+        #ffffff,
+        #8fb6ff,
+        #00E0FF
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+}
+
+.tech-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+    gap:25px;
+
+}
+
+.tech-item{
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:22px;
+
+    padding:30px;
+
+    transition:.35s;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.tech-item:hover{
+
+    transform:translateY(-10px);
+
+    border-color:rgba(79,140,255,.35);
+
+    box-shadow:0 18px 45px rgba(79,140,255,.18);
+
+}
+
+.tech-item img{
+
+    width:70px;
+
+    height:70px;
+
+}
+
+.tech-item span{
+
+    font-weight:600;
+
+}
+
+/* ==========================================================
+   Footer
+   ========================================================== */
+
+footer{
+
+    padding:50px;
+
+    text-align:center;
+
+    color:var(--text2);
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+/* ==========================================================
+   PART 3
+   Responsive Layout, Animations & Final Polish
+   ========================================================== */
+
+/* ---------- Smooth reveal ---------- */
+
+.hero,
+.upload-section,
+.pipeline,
+.tech-stack,
+.features{
+    animation:fadeUp .8s ease both;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ---------- Floating animation ---------- */
+
+.feature,
+.node,
+.upload-card{
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+}
+
+.feature:hover,
+.node:hover,
+.upload-card:hover{
+
+    box-shadow:
+        0 20px 60px rgba(79,140,255,.15);
+
+}
+
+/* ---------- Glow Effect ---------- */
+
+.upload-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-2px;
+
+    border-radius:34px;
+
+    background:linear-gradient(
+        135deg,
+        rgba(79,140,255,.35),
+        rgba(124,92,255,.15),
+        rgba(0,224,255,.25)
+    );
+
+    z-index:0;
+
+    filter:blur(20px);
+
+    opacity:.65;
+
+}
+.upload-card > *{
+
+    position:relative;
+
+    z-index:1;
+
+}
+
+/* ---------- Pipeline Animation ---------- */
+
+.node{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.node::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:120%;
+
+    height:4px;
+
+    left:-120%;
+
+    top:0;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.9),
+        transparent
+    );
+
+    animation:shine 5s infinite;
+
+}
+
+@keyframes shine{
+
+    from{
+
+        left:-120%;
+
+    }
+
+    to{
+
+        left:120%;
+
+    }
+
+}
+
+/* ---------- Button Animation ---------- */
+
+.primary-btn,
+.secondary-btn,
+.upload-btn{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.primary-btn::before,
+.secondary-btn::before,
+.upload-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:100%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.35),
+        transparent
+    );
+
+    transition:.6s;
+
+}
+
+.primary-btn:hover::before,
+.secondary-btn:hover::before,
+.upload-btn:hover::before{
+
+    left:120%;
+
+}
+
+/* ---------- Hero Cloud ---------- */
+
+.cloud{
+
+    filter:
+        drop-shadow(0 0 40px rgba(79,140,255,.35))
+        drop-shadow(0 0 80px rgba(124,92,255,.25));
+
+}
+
+/* ---------- Feature Icons ---------- */
+
+.feature h3{
+
+    color:#fff;
+
+}
+
+.feature:hover h3{
+
+    color:var(--cyan);
+
+}
+
+/* ---------- Footer ---------- */
+
+footer{
+
+    margin-top:80px;
+
+    font-size:15px;
+
+    color:var(--text2);
+
+}
+
+/* ==========================================================
+   Mobile
+   ========================================================== */
+
+@media(max-width:1100px){
+
+.hero{
+
+    grid-template-columns:1fr;
+
+    text-align:center;
+
+}
+
+.hero-text p{
+
+    margin:auto;
+
+}
+
+.hero-buttons{
+
+    justify-content:center;
+
+}
+
+.cloud-card{
+
+    margin-top:50px;
+
+    height:380px;
+
+}
+
+.flow{
+
+    flex-direction:column;
+
+}
+
+.arrow{
+
+    transform:rotate(90deg);
+
+}
+
+.features{
+
+    grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:768px){
+.tech-grid{
+
+    grid-template-columns:1fr 1fr;
+
+}    
+
+.nav{
+
+    padding:0 5%;
+
+}
+
+.nav nav{
+
+    display:none;
+
+}
+
+.hero{
+
+    padding:120px 5%;
+
+}
+
+.hero-text h1{
+
+    font-size:48px;
+
+}
+
+.hero-text p{
+
+    font-size:18px;
+
+}
+
+.upload-section,
+.pipeline,
+.features{
+
+    padding:90px 5%;
+
+}
+
+.drop-area{
+
+    min-height:250px;
+
+}
+
+.drop-area h3{
+
+    font-size:28px;
+
+}
+
+.node{
+
+    width:100%;
+
+}
+
+.feature{
+
+    padding:28px;
+
+}
+
+}
+
+@media(max-width:500px){
+
+.tech-grid{
+
+    grid-template-columns:1fr;
+
+}    
+
+.hero-text h1{
+
+    font-size:38px;
+
+}
+
+.badge{
+
+    font-size:12px;
+
+}
+
+.primary-btn,
+.secondary-btn{
+
+    width:100%;
+
+    text-align:center;
+
+}
+
+.hero-buttons{
+
+    flex-direction:column;
+
+}
+
+.upload-btn{
+
+    font-size:16px;
+
+}
+
+.upload-btn:active{
+
+    transform:scale(.97);
+
+}
+
+}
+.file-info{
+
+    font-size:15px;
+
+    line-height:1.6;
+
+    color:var(--text2);
+
+    animation:filePop .35s ease;
+
+
+}
+
+.upload-btn:disabled{
+
+    opacity:.85;
+
+    cursor:not-allowed;
+
+}
+.drop-area.drag-active{
+
+    border-color:var(--cyan);
+
+    background:rgba(79,140,255,.08);
+
+    transform:translateY(-6px);
+
+    box-shadow:0 0 35px rgba(0,224,255,.2);
+
+}
+
+
+@keyframes filePop{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(12px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+.popup{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.75);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    backdrop-filter:blur(10px);
+
+    z-index:9999;
+
+}
+
+.popup-card{
+
+    width:420px;
+
+    padding:45px;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    text-align:center;
+
+    animation:filePop .35s ease;
+
+}
+
+.popup-card h2{
+
+    margin-bottom:20px;
+
+}
+
+.popup-card p{
+
+    color:var(--text2);
+
+    margin-bottom:30px;
+
+}
+
+.popup-card button{
+
+    padding:15px 28px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:white;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+}
+.upload-success-overlay{
+position:fixed;
+inset:0;
+display:flex;
+justify-content:center;
+align-items:center;
+background:rgba(5,10,25,.82);
+backdrop-filter:blur(10px);
+z-index:9999;
+animation:fadeIn .35s ease;
+}
+
+.upload-success-card{
+width:600px;
+max-width:92%;
+padding:40px;
+border-radius:24px;
+background:linear-gradient(180deg,#111827,#1e293b);
+border:1px solid rgba(255,255,255,.08);
+box-shadow:0 30px 70px rgba(0,0,0,.45);
+color:#fff;
+text-align:center;
+animation:popupScale .35s ease;
+}
+
+@keyframes popupScale{
+
+0%{
+
+opacity:0;
+
+transform:scale(.82);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+.success-circle{
+    width:90px;
+    height:90px;
+    margin:auto;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:42px;
+    margin-bottom:20px;
+    animation:pop .4s ease;
+
+    background:linear-gradient(135deg,#33d17a,#16a34a);
+    box-shadow:0 0 35px rgba(34,197,94,.35);
+}
+
+.success-subtitle{
+color:#b7c5d9;
+margin-bottom:30px;
+}
+
+.success-info{
+display:grid;
+gap:15px;
+margin:30px 0;
+}
+
+.success-info div{
+
+display:flex;
+
+justify-content:space-between;
+
+gap:20px;
+
+align-items:center;
+
+flex-wrap:wrap;
+
+word-break:break-word;
+
+}
+
+.success-status{
+margin-top:25px;
+text-align:left;
+background:rgba(91,108,255,.08);
+padding:18px;
+border-radius:14px;
+line-height:2;
+}
+
+.success-actions{
+    display:flex;
+    gap:20px;
+    margin-top:35px;
+}
+
+@media (max-width:700px){
+
+.success-actions{
+
+    flex-direction:column;
+
+}
+
+}
+
+.btn-primary,
+.btn-secondary{
+flex:1;
+padding:15px;
+border-radius:12px;
+font-weight:700;
+text-decoration:none;
+border:none;
+cursor:pointer;
+}
+
+.btn-primary{
+background:linear-gradient(135deg,#5b6cff,#7b61ff);
+color:#fff;
+}
+
+.btn-secondary{
+background:#26324d;
+color:#fff;
+}
+
+@keyframes pop{
+0%{transform:scale(.5);}
+100%{transform:scale(1);}
+}
+
+@keyframes fadeIn{
+from{opacity:0;}
+to{opacity:1;}
+}
+/* ==========================================================
+   End of UploadFlow Premium Styles
+   ========================================================== */
+
