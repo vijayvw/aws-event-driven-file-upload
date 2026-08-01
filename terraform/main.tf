@@ -11,11 +11,11 @@ module "security" {
 
   source = "./modules/security"
 
-  project_name      = var.project_name
+  project_name = var.project_name
 
-  vpc_id            = module.networking.vpc_id
+  vpc_id = module.networking.vpc_id
 
-  allowed_ssh_cidr  = local.my_ip
+  allowed_ssh_cidr = local.my_ip
 
 }
 
