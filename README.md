@@ -10,35 +10,29 @@ A production-ready event-driven file upload platform built on <b>AWS</b> using <
 
 <p align="center">
 
-<img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonaws&logoColor=FF9900">
-
-<img src="https://img.shields.io/badge/Terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white">
-
-<img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white">
-
-<img src="https://img.shields.io/badge/Apache-D22128?style=for-the-badge&logo=apache&logoColor=white">
-
-<img src="https://img.shields.io/badge/Amazon_S3-569A31?style=for-the-badge&logo=amazons3&logoColor=white">
-
-<img src="https://img.shields.io/badge/AWS_Lambda-FF9900?style=for-the-badge&logo=awslambda&logoColor=white">
-
-<img src="https://img.shields.io/badge/Amazon_SNS-DD344C?style=for-the-badge">
-
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
-
-<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
-
-<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+![AWS](https://img.shields.io/badge/AWS-232F3E?logo=amazonaws&logoColor=FF9900)
+![Terraform](https://img.shields.io/badge/Terraform-7B42BC?logo=terraform&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-777BB4?logo=php&logoColor=white)
+![Apache](https://img.shields.io/badge/Apache-D22128?logo=apache&logoColor=white)
+![Amazon S3](https://img.shields.io/badge/Amazon%20S3-569A31?logo=amazons3&logoColor=white)
+![AWS Lambda](https://img.shields.io/badge/AWS%20Lambda-FF9900?logo=awslambda&logoColor=white)
+![Amazon SNS](https://img.shields.io/badge/Amazon%20SNS-DD344C?logo=amazonsns&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
+![Apache HTTP Server](https://img.shields.io/badge/Apache_HTTP_Server-D22128?logo=apache&logoColor=white)
+![EC2](https://img.shields.io/badge/Amazon_EC2-FF9900?logo=amazonec2&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black)
+![IAM](https://img.shields.io/badge/AWS_IAM-DD344C?logo=amazonaws&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
 
 </p>
 
 <p align="center">
 
-<img src="https://img.shields.io/github/stars/vijayvw/aws-event-driven-file-upload?style=social">
-
-<img src="https://img.shields.io/github/forks/vijayvw/aws-event-driven-file-upload?style=social">
-
-<img src="https://img.shields.io/github/watchers/vijayvw/aws-event-driven-file-upload?style=social">
+![GitHub Stars](https://img.shields.io/github/stars/vijayvw/aws-event-driven-file-upload?style=social)
+![GitHub Forks](https://img.shields.io/github/forks/vijayvw/aws-event-driven-file-upload?style=social)
+![GitHub Watchers](https://img.shields.io/github/watchers/vijayvw/aws-event-driven-file-upload?style=social)
 
 </p>
 
